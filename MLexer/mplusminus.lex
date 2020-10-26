@@ -11,13 +11,6 @@ void warnings();
 
 %%
 
-{alpha}[_{digit}{alpha}]*           { count(); return(check_type()); }
-{digit}+                            { count(); return(IVAL); }
-{digit}*.{digit}+                   { count(); return(RVAL); }
-
-"false"         { count(); return(BVAL); }
-"true"          { count(); return(BVAL); }
-
 "/*"            { comment(); }
 "%" 	        { comment(); }
 
@@ -64,6 +57,12 @@ void warnings();
 "fun"            { count(); return(FUN); }
 "return"         { count(); return(RETURN); }
 
+{alpha}[_{digit}{alpha}]*           { count(); return(check_type()); }
+{digit}+                            { count(); return(IVAL); }
+{digit}*.{digit}+                   { count(); return(RVAL); }
+
+"false"         { count(); return(BVAL); }
+"true"          { count(); return(BVAL); }
 
 [ \t\v\n\f]		{ count(); }
 .			{ /* ignore bad characters */ warnings(); }

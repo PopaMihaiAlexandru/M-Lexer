@@ -19,7 +19,7 @@ void warnings();
 "true"          { count(); return(BVAL); }
 
 "/*"            { comment(); }
-"%"             { comment(); }
+"%" 	        { comment(); }
 
 "+"             { count(); return(ADD); }
 "-"			    { count(); return(SUB); }

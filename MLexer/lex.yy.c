@@ -362,18 +362,18 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[112] =
     {   0,
-        0,    0,   52,   50,   49,   49,    7,   50,   21,   22,
-       10,    8,   29,    9,   11,    2,   27,   28,   17,   16,
-       18,    1,   25,   26,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,   23,   50,   24,
-        3,   13,    6,    0,    2,   12,   19,   20,    1,    0,
-        0,    0,   33,    1,    0,    1,    1,    0,   30,    0,
-        0,    0,    0,    1,    1,    0,    1,    1,   14,    0,
-        0,    0,    0,   37,    1,    0,   47,   39,   15,    0,
-        0,    0,    0,    0,    0,   42,    1,    0,   40,   46,
-       35,    0,    0,    0,    0,   34,   41,    0,   43,   31,
+        0,    0,   52,   50,   49,   49,    2,   50,   16,   17,
+        5,    3,   24,    4,    6,   45,   22,   23,   12,   11,
+       13,   44,   20,   21,   44,   44,   44,   44,   44,   44,
+       44,   44,   44,   44,   44,   44,   44,   18,   50,   19,
+       46,    8,    1,    0,   45,    7,   14,   15,   44,    0,
+        0,    0,   28,   44,    0,   44,   44,    0,   25,    0,
+        0,    0,    0,   44,   44,    0,   44,   44,    9,    0,
+        0,    0,    0,   32,   44,    0,   42,   34,   10,    0,
+        0,    0,    0,    0,    0,   37,   44,    0,   35,   41,
+       30,    0,    0,    0,    0,   29,   36,    0,   38,   26,
 
-        5,    1,   36,    4,   44,   45,   38,    0,   32,   48,
+       48,   44,   31,   47,   39,   40,   33,    0,   27,   43,
         0
     } ;
 
@@ -810,257 +810,257 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 14 "mplusminus.lex"
-{ count(); return(check_type()); }
+{ comment(); }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 15 "mplusminus.lex"
-{ count(); return(IVAL); }
+{ comment(); }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 16 "mplusminus.lex"
-{ count(); return(RVAL); }
+#line 17 "mplusminus.lex"
+{ count(); return(ADD); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 18 "mplusminus.lex"
-{ count(); return(BVAL); }
+{ count(); return(SUB); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 19 "mplusminus.lex"
-{ count(); return(BVAL); }
+{ count(); return(MUL); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 21 "mplusminus.lex"
-{ comment(); }
+#line 20 "mplusminus.lex"
+{ count(); return(DIV); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 22 "mplusminus.lex"
-{ comment(); }
+#line 21 "mplusminus.lex"
+{ count(); return(ASSIGN); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 24 "mplusminus.lex"
-{ count(); return(ADD); }
+#line 22 "mplusminus.lex"
+{ count(); return(AND); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 25 "mplusminus.lex"
-{ count(); return(SUB); }
+#line 23 "mplusminus.lex"
+{ count(); return(OR); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 26 "mplusminus.lex"
-{ count(); return(MUL); }
+#line 24 "mplusminus.lex"
+{ count(); return(NOT); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 27 "mplusminus.lex"
-{ count(); return(DIV); }
+#line 25 "mplusminus.lex"
+{ count(); return(EQUAL); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 28 "mplusminus.lex"
-{ count(); return(ASSIGN); }
+#line 26 "mplusminus.lex"
+{ count(); return(LT); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 29 "mplusminus.lex"
-{ count(); return(AND); }
+#line 27 "mplusminus.lex"
+{ count(); return(GT); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 30 "mplusminus.lex"
-{ count(); return(OR); }
+#line 28 "mplusminus.lex"
+{ count(); return(LE); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 31 "mplusminus.lex"
-{ count(); return(NOT); }
+#line 29 "mplusminus.lex"
+{ count(); return(GE); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 32 "mplusminus.lex"
-{ count(); return(EQUAL); }
+#line 30 "mplusminus.lex"
+{ count(); return(LPAR); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 33 "mplusminus.lex"
-{ count(); return(LT); }
+#line 31 "mplusminus.lex"
+{ count(); return(RPAR); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 34 "mplusminus.lex"
-{ count(); return(RT); }
+#line 32 "mplusminus.lex"
+{ count(); return(CLPAR); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 35 "mplusminus.lex"
-{ count(); return(LE); }
+#line 33 "mplusminus.lex"
+{ count(); return(CRPAR); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 36 "mplusminus.lex"
-{ count(); return(GE); }
+#line 34 "mplusminus.lex"
+{ count(); return(SLPAR); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 37 "mplusminus.lex"
-{ count(); return(LPAR); }
+#line 35 "mplusminus.lex"
+{ count(); return(SRPAR); }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 38 "mplusminus.lex"
-{ count(); return(RPAR); }
+#line 36 "mplusminus.lex"
+{ count(); return(COLON); }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 39 "mplusminus.lex"
-{ count(); return(CLPAR); }
+#line 37 "mplusminus.lex"
+{ count(); return(SEMICLON); }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 40 "mplusminus.lex"
-{ count(); return(CRPAR); }
+#line 38 "mplusminus.lex"
+{ count(); return(COMMA); }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 41 "mplusminus.lex"
-{ count(); return(SLPAR); }
+#line 40 "mplusminus.lex"
+{ count(); return(IF); }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 42 "mplusminus.lex"
-{ count(); return(SRPAR); }
+#line 41 "mplusminus.lex"
+{ count(); return(THEN); }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 43 "mplusminus.lex"
-{ count(); return(COLON); }
+#line 42 "mplusminus.lex"
+{ count(); return(WHILE); }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 44 "mplusminus.lex"
-{ count(); return(SEMICLON); }
+#line 43 "mplusminus.lex"
+{ count(); return(DO); }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 45 "mplusminus.lex"
-{ count(); return(COMMA); }
+#line 44 "mplusminus.lex"
+{ count(); return(READ); }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 47 "mplusminus.lex"
-{ count(); return(IF); }
+#line 45 "mplusminus.lex"
+{ count(); return(ELSE); }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 48 "mplusminus.lex"
-{ count(); return(THEN); }
+#line 46 "mplusminus.lex"
+{ count(); return(BEGIN); }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 49 "mplusminus.lex"
-{ count(); return(WHILE); }
+#line 47 "mplusminus.lex"
+{ count(); return(END); }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 50 "mplusminus.lex"
-{ count(); return(DO); }
+#line 48 "mplusminus.lex"
+{ count(); return(PRINT); }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 51 "mplusminus.lex"
-{ count(); return(READ); }
+#line 49 "mplusminus.lex"
+{ count(); return(INT); }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 52 "mplusminus.lex"
-{ count(); return(ELSE); }
+#line 50 "mplusminus.lex"
+{ count(); return(BOOL); }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 53 "mplusminus.lex"
-{ count(); return(BEGIN); }
+#line 51 "mplusminus.lex"
+{ count(); return(REAL); }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 54 "mplusminus.lex"
-{ count(); return(END); }
+#line 52 "mplusminus.lex"
+{ count(); return(VAR); }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 55 "mplusminus.lex"
-{ count(); return(PRINT); }
+#line 53 "mplusminus.lex"
+{ count(); return(SIZE); }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 56 "mplusminus.lex"
-{ count(); return(INT); }
+#line 54 "mplusminus.lex"
+{ count(); return(FLOAT); }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 57 "mplusminus.lex"
-{ count(); return(BOOL); }
+#line 55 "mplusminus.lex"
+{ count(); return(FLOOR); }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 58 "mplusminus.lex"
-{ count(); return(REAL); }
+#line 56 "mplusminus.lex"
+{ count(); return(CEIL); }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 59 "mplusminus.lex"
-{ count(); return(VAR); }
+#line 57 "mplusminus.lex"
+{ count(); return(FUN); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 60 "mplusminus.lex"
-{ count(); return(SIZE); }
+#line 58 "mplusminus.lex"
+{ count(); return(RETURN); }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 61 "mplusminus.lex"
-{ count(); return(FLOAT); }
+#line 60 "mplusminus.lex"
+{ count(); return(check_type()); }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 62 "mplusminus.lex"
-{ count(); return(FLOOR); }
+#line 61 "mplusminus.lex"
+{ count(); return(IVAL); }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 63 "mplusminus.lex"
-{ count(); return(CEIL); }
+#line 62 "mplusminus.lex"
+{ count(); return(RVAL); }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 64 "mplusminus.lex"
-{ count(); return(FUN); }
+{ count(); return(BVAL); }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
 #line 65 "mplusminus.lex"
-{ count(); return(RETURN); }
+{ count(); return(BVAL); }
 	YY_BREAK
 case 49:
 /* rule 49 can match eol */
 YY_RULE_SETUP
-#line 68 "mplusminus.lex"
+#line 67 "mplusminus.lex"
 { count(); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 69 "mplusminus.lex"
+#line 68 "mplusminus.lex"
 { /* ignore bad characters */ warnings(); }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 71 "mplusminus.lex"
+#line 70 "mplusminus.lex"
 ECHO;
 	YY_BREAK
 #line 1066 "lex.yy.c"
@@ -2068,7 +2068,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 71 "mplusminus.lex"
+#line 70 "mplusminus.lex"
 
 
 yywrap()

@@ -24,7 +24,7 @@ void warnings();
 "not"           { count(); return(NOT); }
 "="             { count(); return(EQUAL); }
 "<"             { count(); return(LT); }
-">"             { count(); return(RT); }
+">"             { count(); return(GT); }
 "=<"            { count(); return(LE); }
 ">="            { count(); return(GE); }
 "("             { count(); return(LPAR); }

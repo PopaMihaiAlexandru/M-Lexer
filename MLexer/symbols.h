@@ -11,7 +11,7 @@
 #define NOT 8
 #define EQUAL 9
 #define LT 10
-#define RT 11
+#define GT 11
 #define LE 12
 #define GE 13
 #define LPAR 14

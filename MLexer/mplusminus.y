@@ -52,12 +52,10 @@
 %%
 prog
 	: block
-	| prog block
 	;
 
 block
-	: declarations
-	| program_body 
+	: declarations program_body 
 	;
 
 declarations
@@ -98,8 +96,7 @@ param_list
 	;
 
 parameters
-	: basic_declaration 
-	| more_parameters 
+	: basic_declaration more_parameters 
 	|
 	;
 

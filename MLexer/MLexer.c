@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include "symbols.h"
-#include <errno.h>
 
+//extern int yylex(void);
+extern int yyparse(void);
 extern FILE* yyin;
-extern int yylex(void);
-const char* lexUnits[] = { "END",
+extern int yydebug;
+char* symbols[] = { "END",
 							"AND",
 							"SUB",
 							"MUL",
@@ -52,20 +53,39 @@ const char* lexUnits[] = { "END",
 
 int main()
 {
-	int tokenValue = 0;
+	//int tokenValue = 0;
+	//yydebug = 1;
 	yyin = fopen("input.csrc", "rt");
 	if (yyin != NULL)
 	{
-		while ((tokenValue = yylex()) != END)
+		int result = yyparse();
+		switch (result)
+		{
+		case 0:
+			printf("Parse successfull.\n");
+			break;
+
+		case 1:
+			printf("Invalid input encountered\n");
+			break;
+
+		case 2:
+			printf("Out of memory\n");
+			break;
+
+		default:
+			break;
+		}
+		/*while ((tokenValue = yylex()) != END)
 		{
 			printf(" -> TOKEN ID: %d; Token Value: %s \n", tokenValue, lexUnits[tokenValue]);
-		}
+		}*/
+		fclose(yyin);
 	}
 	else
 	{
-		printf("Fisierul de intrare nu poate fi deschis. Erorare: %d", errno);
+		printf("Fisier inexistent");
 	}
-
 
 }
 

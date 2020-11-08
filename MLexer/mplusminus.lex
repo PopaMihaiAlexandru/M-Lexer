@@ -3,7 +3,8 @@ alpha           [a-zA-Z]
 
 %{
 #include <stdio.h>
-#include "symbols.h"
+#include "mplusminus.tab.h"
+
 
 void count();
 void warnings();

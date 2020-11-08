@@ -1,5 +1,8 @@
 %{
 #include <stdio.h>
+
+int yyerror(char * s);
+extern int yylex(void);
 %}
 
 %token END
@@ -214,7 +217,9 @@ more_arguments
 
 %%
 
-void yyerror(char * s)
-{
-	printf("%s\n", s);
-}
+int yyerror(char * s) 
+/* yacc error handler */
+{    
+	printf ( "%s\n", s); 
+	return 0;
+}  

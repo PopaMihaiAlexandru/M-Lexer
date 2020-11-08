@@ -1,0 +1,12 @@
+﻿  lex.yy.c
+C:\Users\Vioeu\source\repos\MLexer\MLexer\symbols.h(32,1): warning C4005: 'BEGIN': macro redefinition
+lex.yy.c(116): message : see previous definition of 'BEGIN'
+mplusminus.lex(14,10): warning C4013: 'comment' undefined; assuming extern returning int
+mplusminus.lex(60,29): warning C4013: 'check_type' undefined; assuming extern returning int
+lex.yy.c(1647,46): warning C4013: 'isatty' undefined; assuming extern returning int
+  MLexer.c
+  Generating Code...
+C:\Users\Vioeu\source\repos\MLexer\MLexer\mplusminus.lex(92): warning C4716: 'comment': must return a value
+MLexer.obj : error LNK2019: unresolved external symbol yyparse referenced in function main
+MLexer.obj : error LNK2001: unresolved external symbol yydebug
+C:\Users\Vioeu\source\repos\MLexer\x64\Debug\MLexer.exe : fatal error LNK1120: 2 unresolved externals

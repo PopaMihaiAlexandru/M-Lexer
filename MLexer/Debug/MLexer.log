@@ -1,10 +1,6 @@
-﻿  MLexer.c
-  lex.yy.c
-C:\Users\Vioeu\source\repos\MLexer\MLexer\symbols.h(32,1): warning C4005: 'BEGIN': macro redefinition
-lex.yy.c(116): message : see previous definition of 'BEGIN'
-mplusminus.lex(14,29): warning C4013: 'check_type' undefined; assuming extern returning int
-mplusminus.lex(21,10): warning C4013: 'comment' undefined; assuming extern returning int
-lex.yy.c(1647,46): warning C4013: 'isatty' undefined; assuming extern returning int
-  Generating Code...
-C:\Users\Vioeu\source\repos\MLexer\MLexer\mplusminus.lex(93): warning C4716: 'comment': must return a value
+﻿  lex.yy.c
+mplusminus.lex(15,10): warning C4013: 'comment' undefined; assuming extern returning int
+mplusminus.lex(60,29): warning C4013: 'check_type' undefined; assuming extern returning int
+lex.yy.c(1638,46): warning C4013: 'isatty' undefined; assuming extern returning int
+C:\Users\Vioeu\source\repos\MLexer\MLexer\mplusminus.lex(92): warning C4716: 'comment': must return a value
   MLexer.vcxproj -> C:\Users\Vioeu\source\repos\MLexer\Debug\MLexer.exe

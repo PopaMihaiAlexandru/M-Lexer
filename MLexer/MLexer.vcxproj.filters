@@ -21,10 +21,16 @@
     <ClCompile Include="lex.yy.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mplusminus.tab.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="symbols.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mplusminus.tab.h">
+      <Filter>Resource Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

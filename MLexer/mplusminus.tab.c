@@ -71,7 +71,10 @@
 
 #include <stdio.h>
 
-#line 75 "mplusminus.tab.c"
+int yyerror(char * s);
+extern int yylex(void);
+
+#line 78 "mplusminus.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -551,14 +554,14 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    54,    54,    58,    62,    63,    67,    68,    72,    76,
-      77,    78,    82,    83,    87,    91,    95,    99,   100,   104,
-     105,   109,   113,   114,   118,   122,   126,   127,   131,   132,
-     133,   134,   135,   136,   140,   144,   145,   149,   150,   154,
-     155,   156,   160,   161,   162,   163,   164,   168,   169,   173,
-     174,   178,   179,   183,   184,   188,   189,   190,   191,   192,
-     193,   194,   195,   196,   197,   201,   202,   206,   207,   211,
-     212
+       0,    57,    57,    61,    65,    66,    70,    71,    75,    79,
+      80,    81,    85,    86,    90,    94,    98,   102,   103,   107,
+     108,   112,   116,   117,   121,   125,   129,   130,   134,   135,
+     136,   137,   138,   139,   143,   147,   148,   152,   153,   157,
+     158,   159,   163,   164,   165,   166,   167,   171,   172,   176,
+     177,   181,   182,   186,   187,   191,   192,   193,   194,   195,
+     196,   197,   198,   199,   200,   204,   205,   209,   210,   214,
+     215
 };
 #endif
 
@@ -1231,7 +1234,7 @@ yyreduce:
   switch (yyn)
     {
 
-#line 1235 "mplusminus.tab.c"
+#line 1238 "mplusminus.tab.c"
 
       default: break;
     }
@@ -1425,10 +1428,12 @@ yyreturn:
   return yyresult;
 }
 
-#line 215 "mplusminus.y"
+#line 218 "mplusminus.y"
 
 
-void yyerror(char * s)
-{
-	printf("%s\n", s);
-}
+int yyerror(char * s) 
+/* yacc error handler */
+{    
+	printf ( "%s\n", s); 
+	return 0;
+}  

@@ -29,7 +29,7 @@
 #define DO 27
 #define READ 28
 #define ELSE 29
-#define BEGIN 30
+#define BEGINKEY 30
 #define PRINT 31
 #define INT 32
 #define BOOL 33

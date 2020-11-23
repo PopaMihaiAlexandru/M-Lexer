@@ -3,6 +3,7 @@ alpha           [a-zA-Z]
 
 %{
 #include <stdio.h>
+#include "ast.h"
 #include "mplusminus.tab.h"
 
 
@@ -44,7 +45,7 @@ void warnings();
 "do"             { count(); return(DO); }
 "read"           { count(); return(READ); }
 "else"           { count(); return(ELSE); }
-"begin"          { count(); return(BEGIN); }
+"begin"          { count(); return(BEGINKEY); }
 "end"            { count(); return(END); }
 "print"          { count(); return(PRINT); }
 "int"            { count(); return(INT); }
@@ -58,12 +59,13 @@ void warnings();
 "fun"            { count(); return(FUN); }
 "return"         { count(); return(RETURN); }
 
-{alpha}[_{digit}{alpha}]*           { count(); return(check_type()); }
-{digit}+                            { count(); return(IVAL); }
-{digit}*.{digit}+                   { count(); return(RVAL); }
-
 "false"         { count(); return(BVAL); }
 "true"          { count(); return(BVAL); }
+
+({alpha})+([_{digit}{alpha}])*           { count(); yylval.strings = strdup(yytext); return(check_type()); }
+{digit}+                            { count(); yylval.intVal = atoi(yytext); return(IVAL); }
+{digit}*.{digit}+                   { count(); yylval.intVal = atoi(yytext); return(RVAL); }
+
 
 [ \t\v\n\f]		{ count(); }
 .			{ /* ignore bad characters */ warnings(); }

@@ -134,7 +134,7 @@ enum yysymbol_kind_t
   YYSYMBOL_DO = 29,                        /* DO  */
   YYSYMBOL_READ = 30,                      /* READ  */
   YYSYMBOL_ELSE = 31,                      /* ELSE  */
-  YYSYMBOL_BEGIN = 32,                     /* BEGIN  */
+  YYSYMBOL_BEGINKEY = 32,                  /* BEGINKEY  */
   YYSYMBOL_PRINT = 33,                     /* PRINT  */
   YYSYMBOL_INT = 34,                       /* INT  */
   YYSYMBOL_BOOL = 35,                      /* BOOL  */
@@ -581,15 +581,15 @@ static const char *const yytname[] =
   "MUL", "DIV", "ASSIGN", "AND", "OR", "NOT", "EQUAL", "LT", "GT", "LE",
   "GE", "LPAR", "RPAR", "CLPAR", "CRPAR", "SLPAR", "SRPAR", "COLON",
   "SEMICLON", "COMMA", "IF", "THEN", "WHILE", "DO", "READ", "ELSE",
-  "BEGIN", "PRINT", "INT", "BOOL", "REAL", "VAR", "SIZE", "FLOAT", "FLOOR",
-  "CEIL", "FUN", "RETURN", "IVAL", "RVAL", "BVAL", "ID", "$accept", "prog",
-  "block", "declarations", "declaration", "var_declaration", "type",
-  "array_dimensions", "fun_declaration", "fun_block", "param_list",
-  "parameters", "more_parameters", "basic_declaration",
-  "basic_array_dimensions", "program_body", "fun_body", "prog_stmts",
-  "prog_stmt", "identifier", "expr", "bint_term", "bint_factor",
-  "compare_op", "int_expr", "addop", "int_term", "mulop", "int_factor",
-  "modifier_list", "arguments", "more_arguments", YY_NULLPTR
+  "BEGINKEY", "PRINT", "INT", "BOOL", "REAL", "VAR", "SIZE", "FLOAT",
+  "FLOOR", "CEIL", "FUN", "RETURN", "IVAL", "RVAL", "BVAL", "ID",
+  "$accept", "prog", "block", "declarations", "declaration",
+  "var_declaration", "type", "array_dimensions", "fun_declaration",
+  "fun_block", "param_list", "parameters", "more_parameters",
+  "basic_declaration", "basic_array_dimensions", "program_body",
+  "fun_body", "prog_stmts", "prog_stmt", "identifier", "expr", "bint_term",
+  "bint_factor", "compare_op", "int_expr", "addop", "int_term", "mulop",
+  "int_factor", "modifier_list", "arguments", "more_arguments", YY_NULLPTR
 };
 
 static const char *

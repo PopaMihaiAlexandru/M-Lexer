@@ -83,7 +83,7 @@ extern int yydebug;
     DO = 284,                      /* DO  */
     READ = 285,                    /* READ  */
     ELSE = 286,                    /* ELSE  */
-    BEGIN = 287,                   /* BEGIN  */
+    BEGINKEY = 287,                /* BEGINKEY  */
     PRINT = 288,                   /* PRINT  */
     INT = 289,                     /* INT  */
     BOOL = 290,                    /* BOOL  */

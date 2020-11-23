@@ -1,10 +1,19 @@
 %{
 #include <stdio.h>
+#include "ast.h"
 
+Node* astRoot = NULL;
 int yyerror(char * s);
 extern int yylex(void);
-%}
 
+%}
+%union{
+	
+	Node *node;
+	char* strings;
+	int intVal;
+	bool boolVal;
+}
 %token END
 %token ADD
 %token SUB
@@ -34,7 +43,7 @@ extern int yylex(void);
 %token DO
 %token READ
 %token ELSE
-%token BEGIN
+%token BEGINKEY
 %token PRINT
 %token INT
 %token BOOL
@@ -46,15 +55,47 @@ extern int yylex(void);
 %token CEIL
 %token FUN
 %token RETURN
-%token IVAL
-%token RVAL
+%token <intVal> IVAL
+%token <intVal> RVAL
 %token BVAL
-%token ID
+%token <strings> ID
+
+%type <node> prog
+%type <node> block
+%type <node> declarations
+%type <node> declaration
+%type <node> var_declaration
+%type <node> type
+%type <node> array_dimensions
+%type <node> fun_declaration
+%type <node> fun_block
+%type <node> param_list
+%type <node> parameters
+%type <node> more_parameters
+%type <node> basic_declaration
+%type <node> basic_array_dimensions
+%type <node> program_body
+%type <node> fun_body
+%type <node> prog_stmts
+%type <node> prog_stmt
+%type <node> identifier
+%type <node> expr
+%type <node> bint_term
+%type <node> bint_factor
+%type <node> compare_op
+%type <node> int_expr
+%type <node> addop
+%type <node> int_term
+%type <node> mulop
+%type <node> int_factor
+%type <node> modifier_list
+%type <node> arguments
+%type <node> more_arguments
 
 %start prog
 %%
 prog
-	: block
+	: block { $$ = createProgramUnitNode($1); astRoot = $$;}
 	;
 
 block
@@ -67,18 +108,18 @@ declarations
 	;
 
 declaration
-	: var_declaration
-	| fun_declaration
+	: var_declaration {$$ = createDeclarationNode($1);}
+	| fun_declaration {$$ = createDeclarationNode($1);}
 	;
 
 var_declaration
-	: VAR ID array_dimensions COLON type
+	: VAR ID array_dimensions COLON type { $$ = createVarDeclaration($5, $2, $3);}
 	;
 
 type
-	: INT
-	| REAL
-	| BOOL
+	: INT {$$ = createTypeSpecifier("INT");}
+	| REAL {$$ = createTypeSpecifier("REAL");}
+	| BOOL {$$ = createTypeSpecifier("BOOL");}
 	;
 
 array_dimensions
@@ -87,15 +128,15 @@ array_dimensions
 	;
 
 fun_declaration
-	: FUN ID param_list COLON type CLPAR fun_block CRPAR
+	: FUN ID param_list COLON type CLPAR fun_block CRPAR { $$ = createFunctionDeclarationNode($5, $2, $3, $7);  }
 	;
 
 fun_block 
-	: declarations fun_body
+	: declarations fun_body {$$ = createCompoundStatement($1, $2);}
 	;
 
 param_list
-	: LPAR parameters RPAR
+	: LPAR parameters RPAR { $$ = createListNode("ParameterList", $2); }
 	;
 
 parameters
@@ -109,7 +150,7 @@ more_parameters
 	;
 
 basic_declaration
-	: ID basic_array_dimensions COLON type
+	: ID basic_array_dimensions COLON type { $$ = createVarDeclaration($4, $1, $2);}
 	;
 
 basic_array_dimensions
@@ -118,11 +159,11 @@ basic_array_dimensions
 	;
 
 program_body
-	: BEGIN prog_stmts END
+	: BEGINKEY prog_stmts END
 	;
 
 fun_body
-	: BEGIN prog_stmts RETURN expr SEMICLON END
+	: BEGINKEY prog_stmts RETURN expr SEMICLON END
 	;
 
 prog_stmts
@@ -131,8 +172,8 @@ prog_stmts
 	;
 
 prog_stmt
-	: IF expr THEN prog_stmt ELSE prog_stmt
-	| WHILE expr DO prog_stmt
+	: IF expr THEN prog_stmt ELSE prog_stmt { $$ = createIfStatement("If", $3, $5);}
+	| WHILE expr DO prog_stmt { $$ = createWhileStatement("While", $3);}
 	| READ identifier
 	| identifier ASSIGN expr
 	| PRINT expr

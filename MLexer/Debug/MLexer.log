@@ -1,6 +1,7 @@
 ﻿  lex.yy.c
-mplusminus.lex(15,10): warning C4013: 'comment' undefined; assuming extern returning int
-mplusminus.lex(60,29): warning C4013: 'check_type' undefined; assuming extern returning int
-lex.yy.c(1638,46): warning C4013: 'isatty' undefined; assuming extern returning int
-C:\Users\Vioeu\source\repos\MLexer\MLexer\mplusminus.lex(92): warning C4716: 'comment': must return a value
-  MLexer.vcxproj -> C:\Users\Vioeu\source\repos\MLexer\Debug\MLexer.exe
+mplusminus.lex(16,10): warning C4013: 'comment' undefined; assuming extern returning int
+mplusminus.lex(65,19): error C2224: left of '.strings' must have struct/union type
+mplusminus.lex(65,62): warning C4013: 'check_type' undefined; assuming extern returning int
+mplusminus.lex(66,19): error C2224: left of '.intVal' must have struct/union type
+mplusminus.lex(67,19): error C2224: left of '.intVal' must have struct/union type
+lex.yy.c(1661,46): warning C4013: 'isatty' undefined; assuming extern returning int
